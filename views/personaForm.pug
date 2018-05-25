@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div.container
+    br
+    form(action="/personaForm/persona/operar", method="POST")
+        input(type="hidden", name="_id",value= persona._id) 
+        .form-group
+            label(for="Nombres") Nombres:
+            input#nombres.form-control(type="nombres", name="nombres",value= persona.nombres) 
+        .form-group
+            label(for="apellidos") Apellidos:
+            input(type="text", class="form-control",id="apellidos",name="apellidos",value= persona.apellidos)
+        .form-group
+            label(for="edad") Edad:
+            input(type="number", class="form-control",id="edad",name="edad",value= persona.edad)
+        button(type="submit",class="btn btn-primary") Aceptar 
+        a.btn.btn-danger(href="/") Cancelar   
+
